@@ -4,7 +4,7 @@ Meet Seek, a powerful and user-friendly tool created by StarBoy to simplify the 
 ## Installation 🛠️
 ### Download the files into your system
 ````
-go install github.com/iaakanshff/seek@latest
+go install github.com/iaakanshff/seek@v1.0.1
 ````
 ### Copy the binary to the path folder
 ````
