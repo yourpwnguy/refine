@@ -12,4 +12,7 @@ func PrintUsage() {
 	fmt.Println("  cat file.txt | seek newfile.txt			(Read from stdin and write to a specific file)")
 	fmt.Print("\nAdvanced Functioning: \n\n")
 	fmt.Println("  seek -e 'expression'					(Regular expressions for filtering)")
+	fmt.Print("\nUpdate Functioning: \n\n")
+	fmt.Println("  seek -v, --version					(For checking current version)")
+	fmt.Println("  seek -up, --up 					(For updating to the latest version)")	
 }
