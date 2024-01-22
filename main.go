@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"github.com/iaakanshff/seek/utilities"
 	"github.com/iaakanshff/seek/usage"
+	"github.com/iaakanshff/seek/utilities"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 	)
 
 	stat, _ := os.Stdin.Stat()
-	// Third option ( Reading from stdout and writing to new File )
+
 	if (stat.Mode()&os.ModeCharDevice) == 0 && len(os.Args) > 1 {
 		if len(os.Args) == 4 {
 			if os.Args[1] == "-e" {
@@ -82,6 +82,10 @@ func main() {
 	} else if len(os.Args) == 2 {
 		if os.Args[1] == "-h" || os.Args[1] == "help" {
 			usage.PrintUsage()
+		} else if os.Args[1] == "-v" || os.Args[1] == "--version" {
+			usage.Version()
+		} else if os.Args[1] == "-up" || os.Args[1] == "--up" {
+			usage.Update()
 		} else if os.Args[1] == "-e" {
 			fmt.Println("No expression is provided...")
 			usage.PrintUsage()
