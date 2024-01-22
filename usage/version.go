@@ -18,7 +18,7 @@ var (
 )
 
 func CheckVersion() string {
-	currVersion := "v1.0.1"
+	currVersion := "v1.0.2"
 	return currVersion
 }
 
