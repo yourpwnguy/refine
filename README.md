@@ -1,5 +1,5 @@
 ## Introduction: Unduplication Tool (Seek) 🚀
-Meet Seek, a powerful and user-friendly tool created by StarBoy to simplify the process of removing duplicate lines from files. Seek is designed with efficiency in mind, making file manipulation a seamless experience for users. Below is a comprehensive guide on installing and using Seek to enhance your file processing tasks. A tool for processing files and writing to them.
+Meet Seek, a powerful and user-friendly tool created by Aakansh to simplify the process of removing duplicate lines from files. Seek is designed with efficiency in mind, making file manipulation a seamless experience for users. Below is a comprehensive guide on installing and using Seek to enhance your file processing tasks. A tool for processing files and writing to them.
 
 ## Installation 🛠️
 ### Download the files into your system
