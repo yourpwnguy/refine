@@ -54,7 +54,7 @@ https://github.com              |
 ````
 In this scenario, Seek processes input through piping and writes the unduplicated output to a new file specified as an argument. This approach allows users to create a new file with cleaned data while preserving the original content
 
-## Unistallation 🗑️
+## Uninstallation 🗑️
 ````
 sudo rm ~/go/bin/seek
 sudo rm /bin/seek
