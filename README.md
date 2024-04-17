@@ -8,7 +8,7 @@ go install github.com/iaakanshff/seek@v1.0.2
 ````
 ### Copy the binary to the path folder
 ````
-sudo cp ~/go/bin/seek /bin/
+sudo cp ~/go/bin/seek /usr/local/bin/
 ````
 
 ## Usage 📘
