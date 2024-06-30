@@ -135,7 +135,7 @@ $ cat file1.txt | refine file2.txt
           
 ## But Why Use Our Tool❓ 
 
-Well, I understand that there are already popular solutions out there like tomnomnom's anew, but here's why I think `refine` stands out: I've taken inspiration from those tools and built `refine` to be even more flexible and feature-rich. It's all about making features like wildcard sorting as straightforward and powerful as possible. With `refine`, I've aimed to make it easy for you to manage and sort all your files exactly how you need them.
+Well, I understand that there are already popular solutions out there like `tomnomnom's` [anew](https://github.com/tomnomnom/anew), but here's why I think `refine` stands out: I've taken inspiration from those tools and built `refine` to be even more flexible and feature-rich. It's all about making features like wildcard sorting as straightforward and powerful as possible. With `refine`, I've aimed to make it easy for you to manage and sort all your files exactly how you need them.
 
 ## Contributing 🤝
 
