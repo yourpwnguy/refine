@@ -108,7 +108,7 @@ $ refine -w .\test\
 ```js
 $ refine -w .\test\ -we 1.txt,2.txt
 [INF] File: 3.txt, Original: 2176797 lines, Unique: 306 lines, Processed in 265.4093ms
-[INF] File: 4.txt, Original: 2229058 lines, Unique: 307 lines, Processed in 376.9528ms
+[INF] File: 4.txt, Original: 2229058 lines, Unique: 308 lines, Processed in 376.9528ms
 ```
 ---
 
