@@ -55,7 +55,7 @@ DEBUG:
 ```
 ### DIRECT MODE:
 
-1) Using `refine` to read and write to the same file:
+1) Using `refine` to read and write the deduplicated ouptut to the same file:
 ```js
 $ cat file.txt
 https://google.com
@@ -75,7 +75,7 @@ https://microsoft.com
 https://twitter.com
 ```
 
-2) Using `refine` to read from file1 and write to file2:
+2) Using `refine` to read from file1 and write to deduplicated output to file2:
 ```js
 $ cat file1.txt
 https://google.com
@@ -114,7 +114,7 @@ $ refine -w .\test\ -we 1.txt,2.txt
 
 ### STDIN MODE:
 
-1) Using `refine` for sorting the lines from the standard input (stdin). The unduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
+1) Using `refine` for sorting the lines from the standard input (stdin). The deduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
 
 ```js
 $ cat file.txt | refine
