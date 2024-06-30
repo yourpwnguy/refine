@@ -1,3 +1,19 @@
+<div align="center">
+
+![GoStyle LOGO](https://i.imgur.com/YcATkTY.png)
+
+</div>
+<h4 align="center">Simple, fast, and efficient tool for decoding JWT tokens, supporting base64 and JSON Web Token (JWT) formats..</h4>
+<p align="center">
+<img src="https://img.shields.io/github/go-mod/go-version/iaakanshff/crtfinder">
+<!-- <a href="https://github.com/iaakanshff/crtfinder/releases"><img src="https://img.shields.io/github/downloads/iaakanshff/crtfinder/total"> -->
+<a href="https://github.com/iaakanshff/crtfinder/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/iaakanshff/crtfinder">
+<!-- <a href="https://github.com/iaakanshff/crtfinder/releases/"><img src="https://img.shields.io/github/release/iaakanshff/crtfinder"> -->
+<a href="https://github.com/iaakanshff/crtfinder/issues"><img src="https://img.shields.io/github/issues-raw/iaakanshff/crtfinder">
+<a href="https://github.com/iaakanshff/crtfinder/stars"><img src="https://img.shields.io/github/stars/iaakanshff/crtfinder">
+<!-- <a href="https://github.com/iaakanshff/crtfinder/discussions"><img src="https://img.shields.io/github/discussions/iaakanshff/crtfinder"> -->
+</p>
+
 ## Introduction: Unduplication Tool (Seek) 🚀
 Meet Seek, a powerful and user-friendly tool created by Aakansh to simplify the process of removing duplicate lines from files. Seek is designed with efficiency in mind, making file manipulation a seamless experience for users. Below is a comprehensive guide on installing and using Seek to enhance your file processing tasks. A tool for processing files and writing to them.
 
