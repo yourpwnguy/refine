@@ -55,7 +55,7 @@ DEBUG:
 ```
 ### DIRECT MODE:
 
-1) Using refine to read and write to the same file:
+1) Using `refine` to read and write to the same file:
 ```js
 $ cat file.txt
 https://google.com
