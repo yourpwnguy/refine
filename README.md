@@ -1,9 +1,9 @@
 <div align="center">
 
-![GoStyle LOGO](https://i.imgur.com/YcATkTY.png)
+![GoStyle LOGO](https://i.imgur.com/wveX8z8.png)
 
 </div>
-<h4 align="center">Simple, fast, and efficient tool for decoding JWT tokens, supporting base64 and JSON Web Token (JWT) formats..</h4>
+<h4 align="center">Simple, Ultra-fast file handling utility for text deduplication.</h4>
 <p align="center">
 <img src="https://img.shields.io/github/go-mod/go-version/iaakanshff/crtfinder">
 <!-- <a href="https://github.com/iaakanshff/crtfinder/releases"><img src="https://img.shields.io/github/downloads/iaakanshff/crtfinder/total"> -->
@@ -14,68 +14,129 @@
 <!-- <a href="https://github.com/iaakanshff/crtfinder/discussions"><img src="https://img.shields.io/github/discussions/iaakanshff/crtfinder"> -->
 </p>
 
-## Introduction: Unduplication Tool (Seek) 🚀
-Meet Seek, a powerful and user-friendly tool created by Aakansh to simplify the process of removing duplicate lines from files. Seek is designed with efficiency in mind, making file manipulation a seamless experience for users. Below is a comprehensive guide on installing and using Seek to enhance your file processing tasks. A tool for processing files and writing to them.
+---
+
+Meet `refine`, a powerful and user-friendly tool for the process of removing duplicate lines from files. `refine` is designed with efficiency in mind, making file manipulation a seamless experience for users. Below is a comprehensive guide on installing and using Seek to enhance your file processing tasks.
+
+## Features 💡
+
+- Efficient file deduplication and management.
+- Includes inbuilt sorting.
+- Support for diverse input methods.
+- Advanced wildcard sorting with exception handling.
 
 ## Installation 🛠️
-### Download the files into your system
-````
-go install github.com/iaakanshff/seek@v1.0.2
-````
-### Copy the binary to the path folder
-````
+To install the refine tool, you can simply use the following command.
+````bash
+go install "github.com/iaakanshff/seek@latest"
 cp ~/go/bin/seek /usr/local/bin/
 ````
 
 ## Usage 📘
-### 1) Directly on files:
-````
-─$ cat file.txt                 |      ─$ seek file.txt 
-https://google.com              |      ─$ cat file.txt 
-https://google.com              |      https://google.com 
-https://google.com              |      https://microsoft.com 
-https://microsoft.com           |      https://twitter.com 
-https://twitter.com             |      https://github.com 
-https://twitter.com             |
-https://github.com              |
-https://github.com              |
-````
-Seek directly operates on files, removing duplicates and updating the original file with clean output. It's a quick and efficient way to sanitize your data.
+```yaml
+Usage: refine [options]
 
-### 2) Using Piping (|):
-````
-─$ cat file.txt                 |      ─$ cat file.txt | seek
-https://google.com              |      https://google.com 
-https://google.com              |      https://microsoft.com     
-https://google.com              |      https://twitter.com        
-https://microsoft.com           |      https://github.com     
-https://twitter.com             |       
-https://twitter.com             |
-https://github.com              |
-https://github.com              |
-````
-Here, Seek processes input from the standard output (stdout) using piping. The unduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
+Options: [flag] [argument] [Description]
 
-### 3) Piping with Output to a New File:
-````
-─$ cat file.txt                 |      ─$ cat file.txt | seek newfile.txt 
-https://google.com              |      ─$ cat newfile.txt 
-https://google.com              |      https://google.com 
-https://google.com              |      https://microsoft.com 
-https://microsoft.com           |      https://twitter.com 
-https://twitter.com             |      https://github.com 
-https://twitter.com             |
-https://github.com              |
-https://github.com              |
-````
-In this scenario, Seek processes input through piping and writes the unduplicated output to a new file specified as an argument. This approach allows users to create a new file with cleaned data while preserving the original content
+DIRECT:
+  refine file.txt                       (Read and write to the same file)
+  refine file1.txt file2.txt            (Read from file1 and write to the file2)
 
-## Uninstallation 🗑️
-````
-sudo rm ~/go/bin/seek
-sudo rm /bin/seek
-````
-You can uninstall the tool anytime. Just follow the above steps and remember to provide feedback :)
+STDIN:
+  cat file.txt | refine                 (Read from stdin and display to stdout)
+  cat file.txt | refine newfile.txt     (Read from stdin and write to a specific file)
 
-## Conclusion 🌟
-I Hope that you'll like this tool, any feedback will be appreciated. I find this tool very useful when I have to process a large chunk of files to remove duplicate lines.
+FEATURES: (ONLY DIRECT MODE)
+  refine -w, --wildcard                 (Sort all files in the directory)
+  refine -we, --wildcard-exception      (Specify files to be skipped while using wildcard)
+
+DEBUG:
+  refine -v, --version                  (Check current version)
+```
+### DIRECT MODE:
+
+1) Using refine to read and write to the same file:
+```js
+$ cat file.txt
+https://google.com
+https://google.com
+https://microsoft.com
+https://twitter.com
+https://github.com
+https://github.com
+
+$ refine file.txt
+[INF] File: test.txt, Original: 6 lines, Unique: 4 lines, Processed in 108.2µs
+
+$ cat file.txt
+https://github.com
+https://google.com
+https://microsoft.com
+https://twitter.com
+```
+
+2) Using `refine` to read from file1 and write to file2:
+```js
+$ cat file1.txt
+https://google.com
+https://google.com
+https://microsoft.com
+https://twitter.com
+https://github.com
+https://github.com
+
+$ refine file1.txt file2.txt
+[INF] File: file2.txt, Original: 6 lines, Unique: 4 lines, Processed in 101.1µs
+
+$ cat file2.txt
+https://github.com
+https://google.com
+https://microsoft.com
+https://twitter.com
+```
+
+3) Using `refine` for wildcard sorting (-w), which sorts all files in a directory. This feature is limited to direct mode, as during the tool's development, no use case for the pipeline mode was found.
+```js
+$ refine -w .\test\
+[INF] File: 1.txt, Original: 2203598 lines, Unique: 308 lines, Processed in 355.4838ms
+[INF] File: 2.txt, Original: 2193548 lines, Unique: 308 lines, Processed in 357.8736ms
+[INF] File: 3.txt, Original: 2176797 lines, Unique: 308 lines, Processed in 360.693ms
+[INF] File: 4.txt, Original: 2229058 lines, Unique: 308 lines, Processed in 353.194ms
+```
+
+4) Using `refine` for wildcard sorting (-w), which sorts all files in a directory except for the specified exceptions. The exceptions, meaning the files to be skipped, can be provided through the -we (wildcard exception) flag with filenames comma-separated.
+```js
+$ refine -w .\test\ -we 1.txt,2.txt
+[INF] File: 3.txt, Original: 2176797 lines, Unique: 306 lines, Processed in 265.4093ms
+[INF] File: 4.txt, Original: 2229058 lines, Unique: 307 lines, Processed in 376.9528ms
+```
+---
+
+### STDIN MODE:
+
+1) Using `refine` for sorting the lines from the standard input (stdin). The unduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
+
+```js
+$ cat file.txt | refine
+https://github.com
+https://google.com
+https://microsoft.com
+https://twitter.com
+[INF] Original: 6 lines, Unique: 4 lines, Processed in 0s
+```
+
+
+2) Using the `refine` for sorting the lines from the standard input (stdin), and writes the deduplicated output to a new file specified as an argument. This allows users to create a new file with cleaned data while preserving the original content. `Note:` If the specified file already exists and contains data, it will also be sorted.
+
+```js
+$ cat file1.txt | refine file2.txt
+[INF] File: file2.txt, Original: 10 lines, Unique: 4 lines, Processed in 150.3µs
+```
+          
+## But Why Use Our Tool❓ 
+
+Well, I understand that there are already popular solutions out there like tomnomnom's anew, but here's why I think `refine` stands out: I've taken inspiration from those tools and built `refine` to be even more flexible and feature-rich. It's all about making features like wildcard sorting as straightforward and powerful as possible. With `refine`, I've aimed to make it easy for you to manage and sort all your files exactly how you need them.
+
+## Contributing 🤝
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, feel free to open an issue or submit a pull request.
