@@ -27,7 +27,7 @@ func HandleStdin(fflag bool) (*map[string]struct{}, int, int) {
 
 	// Print the unique lines to stdout
 	if !fflag {
-		for _, sorted := range SortMap(&temp) {
+		for _, sorted := range *SortMap(&temp) {
 			fmt.Println(sorted)
 		}
 	}

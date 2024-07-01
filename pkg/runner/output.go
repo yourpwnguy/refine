@@ -25,7 +25,7 @@ func processOutput(fn string, temp *map[string]struct{}) error {
 	sortedLines := SortMap(temp)
 
 	// Iterate over the unique lines and write them to the file
-	for _, line := range sortedLines {
+	for _, line := range *sortedLines {
 		_, err := f.WriteString(line + "\n")
 		if err != nil {
 			return fmt.Errorf(Errfix+" Error writing to file:", err)

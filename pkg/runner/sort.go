@@ -5,7 +5,7 @@ import (
 )
 
 // Function for sorting all the lines
-func SortMap(temp *map[string]struct{}) []string {
+func SortMap(temp *map[string]struct{}) *[]string {
 	var sorted []string
 	for line := range *temp {
 		sorted = append(sorted, line)
@@ -13,5 +13,5 @@ func SortMap(temp *map[string]struct{}) []string {
 
 	// Sort the slice in-place
 	slices.Sort(sorted)
-	return sorted
+	return &sorted
 }
