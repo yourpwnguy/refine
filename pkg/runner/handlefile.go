@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/iaakanshff/gostyle"
+	"github.com/yourpwnguy/gostyle"
 )
 
 var (
