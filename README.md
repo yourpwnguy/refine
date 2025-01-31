@@ -53,85 +53,41 @@ FEATURES: (ONLY DIRECT MODE)
 DEBUG:
   refine -v, --version                  (Check current version)
 ```
+
 ### DIRECT MODE:
 
 1) Using `refine` to read and write the deduplicated ouptut to the same file:
-```js
-$ cat file.txt
-https://google.com
-https://google.com
-https://microsoft.com
-https://twitter.com
-https://github.com
-https://github.com
 
-$ refine file.txt
-[INF] File: test.txt, Original: 6 lines, Unique: 4 lines, Processed in 108.2µs
+![refine-direct-mode](https://i.imgur.com/6v0cbQ4.png)
 
-$ cat file.txt
-https://github.com
-https://google.com
-https://microsoft.com
-https://twitter.com
-```
 
-2) Using `refine` to read from file1 and write to deduplicated output to file2:
-```js
-$ cat file1.txt
-https://google.com
-https://google.com
-https://microsoft.com
-https://twitter.com
-https://github.com
-https://github.com
+2) Using `refine` to read from file1 and write the deduplicated output to file2:
 
-$ refine file1.txt file2.txt
-[INF] File: file2.txt, Original: 6 lines, Unique: 4 lines, Processed in 101.1µs
+![refine-direct-mode](https://i.imgur.com/cORvZu9.png)
 
-$ cat file2.txt
-https://github.com
-https://google.com
-https://microsoft.com
-https://twitter.com
-```
 
 3) Using `refine` for wildcard sorting (-w), which sorts all files in a directory. This feature is limited to direct mode, as during the tool's development, no use case for the pipeline mode was found.
-```js
-$ refine -w .\test\
-[INF] File: 1.txt, Original: 2203598 lines, Unique: 308 lines, Processed in 355.4838ms
-[INF] File: 2.txt, Original: 2193548 lines, Unique: 308 lines, Processed in 357.8736ms
-[INF] File: 3.txt, Original: 2176797 lines, Unique: 308 lines, Processed in 360.693ms
-[INF] File: 4.txt, Original: 2229058 lines, Unique: 308 lines, Processed in 353.194ms
-```
+
+![refine-direct-mode](https://i.imgur.com/Yh7YEl7.png)
+
 
 4) Using `refine` for wildcard sorting (-w), which sorts all files in a directory except for the specified exceptions. The exceptions, meaning the files to be skipped, can be provided through the -we (wildcard exception) flag with filenames comma-separated.
-```js
-$ refine -w .\test\ -we 1.txt,2.txt
-[INF] File: 3.txt, Original: 2176797 lines, Unique: 306 lines, Processed in 265.4093ms
-[INF] File: 4.txt, Original: 2229058 lines, Unique: 308 lines, Processed in 376.9528ms
-```
+
+![refine-direct-mode](https://i.imgur.com/rg5dqR3.png)
+
 ---
 
 ### STDIN MODE:
 
 1) Using `refine` for sorting the lines from the standard input (stdin). The deduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
 
-```js
-$ cat file.txt | refine
-https://github.com
-https://google.com
-https://microsoft.com
-https://twitter.com
-[INF] Original: 6 lines, Unique: 4 lines, Processed in 0s
-```
+![refine-direct-mode](https://i.imgur.com/bmQGRK8.png)
 
 
 2) Using the `refine` for sorting the lines from the standard input (stdin), and writes the deduplicated output to a new file specified as an argument. This allows users to create a new file with cleaned data while preserving the original content. `Note:` If the specified file already exists and contains data, it will also be sorted.
 
-```js
-$ cat file1.txt | refine file2.txt
-[INF] File: file2.txt, Original: 10 lines, Unique: 4 lines, Processed in 150.3µs
-```
+![refine-direct-mode](https://i.imgur.com/cORvZu9.png)
+
           
 ## But Why Use Our Tool❓ 
 
