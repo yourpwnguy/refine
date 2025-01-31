@@ -1,24 +1,24 @@
 package main
 
 import (
-	"github.com/yourpwnguy/refine/pkg/runner"
+	"github.com/yourpwnguy/refine/pkg/middleflow"
+	"github.com/yourpwnguy/refine/pkg/utils"
 )
 
 func main() {
 
-	
 	// Handle version and help arguments
-	runner.HandleVersionAndHelp()
+	utils.HandleVersionAndHelp()
 
 	// Check if input is from stdin
-	stdin := runner.IsInputFromStdin()
+	stdin := utils.IsInputFromStdin()
 
 	// If data is from standard input
 	if stdin {
-		runner.HandleStdinInput()
+		middleflow.HandleStdinInput()
 
-	// If data is directly from a file
+		// If data is directly from a file
 	} else {
-		runner.HandleFileInput()
+		middleflow.HandleFileInput()
 	}
 }
