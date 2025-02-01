@@ -10,6 +10,7 @@ import (
 	"github.com/yourpwnguy/refine/pkg/types"
 )
 
+// Absolutely shit !!
 func BeautifyPrint(params types.Params) {
 	// Format the time duration as "1mXs", "Xs", or "Xms" depending on the value
 	timeTaken := params.TimeTaken
@@ -30,31 +31,9 @@ func BeautifyPrint(params types.Params) {
 		}
 	}
 
-	// Print the formatted output (Filename exists)
-	if params.Filename != "" && params.OutputFile != "" {
-		fmt.Fprintln(os.Stderr,
-			"("+common.G.Bold(common.G.BrBlue("*"))+")",
-			common.G.Bold(common.G.BrRed("INP")),
-			common.G.White("->"),
-			common.G.Bold(common.G.BrYellow(params.Filename)),
-			common.G.White("|"),
-			common.G.Bold(common.G.BrRed("OUT")),
-			common.G.White("->"),
-			common.G.Bold(common.G.BrYellow(params.OutputFile)),
-			common.G.White("|"),
-			common.G.Bold(common.G.BrBlue("TOT")),
-			common.G.White("->"),
-			common.G.Bold(common.G.BrYellow(strconv.Itoa(params.TotalLinesCount))),
-			common.G.White("|"),
-			common.G.Bold(common.G.BrBlue("UNQ")),
-			common.G.White("->"),
-			common.G.Bold(common.G.BrYellow(strconv.Itoa(params.UniqueLinesCount))),
-			common.G.White("|"),
-			common.G.Bold(common.G.BrCyan("DUR")),
-			common.G.White("->"),
-			common.G.Bold(common.G.BrGreen(formattedTime)),
-		)
-	} else if params.Filename == "" && params.OutputFile != "" {
+	// Print the formatted output (From not stdin)
+	// TODO: IS THERE ANY FORMAT TO PRINT THIS ?
+	if params.OutputFile != "" {
 		fmt.Fprintln(os.Stderr,
 			"("+common.G.Bold(common.G.BrBlue("*"))+")",
 			common.G.Bold(common.G.BrRed("OUT")),

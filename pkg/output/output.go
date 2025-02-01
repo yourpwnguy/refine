@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/yourpwnguy/refine/pkg/common"
-	"github.com/yourpwnguy/refine/pkg/utils"
 )
 
 // ProcessOutput writes new data from file map
@@ -19,7 +18,7 @@ func ProcessOutput(f *os.File, temp map[string]struct{}) error {
 	}
 
 	// Call SortMap once to get the sorted slice
-	sortedLines := utils.SortMap(temp)
+	sortedLines := common.SortMap(temp)
 
 	// Join all lines with newline and write them in one shot
 	_, err = f.WriteString(strings.Join(sortedLines, "\n") + "\n")

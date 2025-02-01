@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/yourpwnguy/refine/pkg/common"
@@ -36,7 +37,7 @@ func IsInputFromStdin() bool {
 // shouldSkip checks if a file should be skipped based on the exceptions list.
 func ShouldSkip(fileName string, exceptions []string) bool {
 	for _, exception := range exceptions {
-		if fileName == exception {
+		if fileName == filepath.Base(exception) {
 			return true
 		}
 	}

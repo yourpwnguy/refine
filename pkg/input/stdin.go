@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/yourpwnguy/refine/pkg/utils"
+	"github.com/yourpwnguy/refine/pkg/common"
 )
 
 // Handling input from the standard input
@@ -33,7 +33,7 @@ func HandleStdin(fflag bool) (map[string]struct{}, int, int, time.Time) {
 
 	// Print the unique lines to stdout
 	if !fflag {
-		for _, sorted := range utils.SortMap(temp) {
+		for _, sorted := range common.SortMap(temp) {
 			fmt.Println(sorted)
 		}
 	}
