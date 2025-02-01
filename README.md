@@ -56,37 +56,37 @@ DEBUG:
 
 ### DIRECT MODE:
 
-1) Using `refine` to read and write the deduplicated ouptut to the same file:
+Using `refine` to read and write the deduplicated ouptut to the same file:
 
-![refine-direct-mode](https://i.imgur.com/6v0cbQ4.png)
-
-
-2) Using `refine` to read from file1 and write the deduplicated output to file2:
-
-![refine-direct-mode](https://i.imgur.com/cORvZu9.png)
+![refine-direct-mode](https://i.imgur.com/S28T7En.png)
 
 
-3) Using `refine` for wildcard sorting (-w), which sorts all files in a directory. This feature is limited to direct mode, as during the tool's development, no use case for the pipeline mode was found.
+Using `refine` to read from file1 and write the deduplicated output to file2:
 
-![refine-direct-mode](https://i.imgur.com/Yh7YEl7.png)
+![refine-direct-mode](https://i.imgur.com/F6BeuEI.png)
 
 
-4) Using `refine` for wildcard sorting (-w), which sorts all files in a directory except for the specified exceptions. The exceptions, meaning the files to be skipped, can be provided through the -we (wildcard exception) flag with filenames comma-separated.
+Using `refine` for wildcard sorting (-w), which sorts all files in a directory. This feature is limited to direct mode, as during the tool's development, no use case for the pipeline mode was found.
 
-![refine-direct-mode](https://i.imgur.com/rg5dqR3.png)
+![refine-direct-mode](https://i.imgur.com/olQvVCD.png)
+
+
+Using `refine` for wildcard sorting (-w), which sorts all files in a directory except for the specified exceptions. The exceptions, meaning the files to be skipped, can be provided through the -we (wildcard exception) flag with filenames comma-separated.
+
+![refine-direct-mode](https://i.imgur.com/zwUt90r.png)
 
 ---
 
 ### STDIN MODE:
 
-1) Using `refine` for sorting the lines from the standard input (stdin). The deduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
+Using `refine` for sorting the lines from the standard input (stdin). The deduplicated output is displayed on the terminal without modifying the original file. This method is ideal for viewing results without altering the source file.
 
-![refine-direct-mode](https://i.imgur.com/bmQGRK8.png)
+![refine-direct-mode](https://i.imgur.com/k9Svi6Q.png)
 
 
-2) Using the `refine` for sorting the lines from the standard input (stdin), and writes the deduplicated output to a new file specified as an argument. This allows users to create a new file with cleaned data while preserving the original content. `Note:` If the specified file already exists and contains data, it will also be sorted.
+Using the `refine` for sorting the lines from the standard input (stdin), and writes the deduplicated output to a new file specified as an argument. This allows users to create a new file with cleaned data while preserving the original content. `Note:` If the specified file already exists and contains data, it will also be sorted.
 
-![refine-direct-mode](https://i.imgur.com/cORvZu9.png)
+![refine-direct-mode](https://i.imgur.com/Oxrbq1K.png)
 
           
 ## But Why Use Our Tool❓ 
